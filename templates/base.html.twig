@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Погода{% endblock %}</title>
+    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+    {% block stylesheets %}{% endblock %}
+</head>
+<body>
+<div class="container">
+    {% block body %}{% endblock %}
+</div>
+<script src="{{ asset('js/app.js') }}"></script>
+{% block javascripts %}{% endblock %}
+</body>
+</html>

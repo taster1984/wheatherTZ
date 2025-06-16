@@ -1,0 +1,16 @@
+parameters:
+    kernel.secret: '%env(APP_SECRET)%'
+    weather.api_key: '%env(WEATHER_API_KEY)%'
+
+services:
+    App\Service\WeatherService:
+        arguments:
+            $apiKey: '%weather.api_key%'
+            $logger: '@monolog.logger.weather'
+    App\Controller\:
+        resource: '../../src/Controller'
+        tags: ['controller.service_arguments'] # Для автопідстановки сервісів у контролери
+
+    _defaults:
+        autowire: true
+        autoconfigure: true

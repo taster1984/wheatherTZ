@@ -1,0 +1,15 @@
+monolog:
+  channels: ['weather']
+  handlers:
+    weather:
+      type: stream
+      path: '%kernel.project_dir%/var/weather_log.txt'
+      level: info
+      channels: [weather]
+      formatter: weather_log_formatter # Форматуємо строку як в завданні
+services:
+  weather_log_formatter:
+    class: Monolog\Formatter\LineFormatter
+    arguments:
+      $format: "%%datetime%% - %%message%%\n"
+      $dateFormat: "Y-m-d H:i:s"

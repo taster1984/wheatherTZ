@@ -1,0 +1,10 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+<h1>Погода в крупных городах мира</h1>
+<ul class="city-list">
+    {% for city in cities %}
+        <li><a class="button" href="{{ path('weather', {city: city}) }}">{{ city }}</a></li>
+    {% endfor %}
+</ul>
+{% endblock %}

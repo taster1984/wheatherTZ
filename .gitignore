@@ -1,0 +1,38 @@
+# Всі залежності Composer
+/vendor/
+
+# Кеш Symfony
+/var/cache/
+/var/log/
+/var/test/
+
+# Логи, сесії, погодний лог
+/var/*.log
+/var/weather_log.txt
+/var/sessions/
+
+# IDE-файли
+.idea/
+.vscode/
+*.sublime-project
+*.sublime-workspace
+
+# Збірки Encore/Webpack (якщо використовуєш)
+public/build/
+public/bundles/
+node_modules/
+
+# Файли тестового покриття
+/coverage/
+/phpunit.result.cache
+
+# Конфіденційна інформація
+.env.local
+.env.*.local
+.env.test.local
+.env.dev.local
+.env.prod.local
+
+# Mac/Windows/system files
+.DS_Store
+Thumbs.db

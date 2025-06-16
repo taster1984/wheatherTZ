@@ -1,0 +1,18 @@
+#!/usr/bin/env php
+<?php
+
+use App\Kernel;
+use Symfony\Bundle\FrameworkBundle\Console\Application;
+use Symfony\Component\Dotenv\Dotenv;
+
+require dirname(__DIR__).'/vendor/autoload.php';
+
+if (!class_exists(Kernel::class)) {
+    throw new LogicException('App\Kernel not found. Did you create src/Kernel.php?');
+}
+
+(new Dotenv())->bootEnv(dirname(__DIR__).'/.env');
+
+$kernel = new Kernel($_SERVER['APP_ENV'], (bool) $_SERVER['APP_DEBUG']);
+$application = new Application($kernel);
+$application->run();

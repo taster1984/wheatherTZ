@@ -1,0 +1,21 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+  <h1>Текущая погода в {{ city }}, {{ country }}:</h1>
+  {% if error %}
+    <div style="color:red;">Ошибка: {{ message }}</div>
+  {% else %}
+    <ul>
+      <li>Температура: {{ temperature }}°C</li>
+      <li>Состояние: {{ condition }}</li>
+      <li>Влажность: {{ humidity }}%</li>
+      <li>Скорость ветра: {{ wind_speed }} км/ч</li>
+      <li>Последнее обновление: {{ last_updated }}</li>
+    </ul>
+    <a href="{{ path('weather_home') }}" class="btn btn-back">
+      ← Назад к выбору города
+    </a>
+  {% endif %}
+{% endblock %}
+
+
