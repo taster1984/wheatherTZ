@@ -25,7 +25,7 @@ node_modules/
 # Файли тестового покриття
 /coverage/
 /phpunit.result.cache
-
+.phpunit.result.cache
 # Конфіденційна інформація
 .env.local
 .env.*.local

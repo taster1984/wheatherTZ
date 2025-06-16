@@ -1,1 +1,0 @@
-{"version":1,"defects":{"App\\Tests\\Service\\WeatherServiceTest::testGetWeatherReturnsCorrectData":7},"times":{"App\\Tests\\Service\\WeatherServiceTest::testGetWeatherReturnsCorrectData":0.003}}
